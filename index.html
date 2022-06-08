@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm ngược từng giây</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+</head>
+<body style="position: relative; background: url('images/nen.jpg') repeat;">
+<div class="giua" style="width: 95%; margin: 100px auto; text-align: center; z-index: 1;">
+    <h1 style="text-transform: uppercase; color: #d9534f;">Cùng đếm ngược thời gian chào đón năm mới Qúy Mão 2023</h1>
+    <h2 style="color: #337ab7; text-transform: capitalize">Thời gian đến tết còn lại:</h2>
+    <div id="tet" style="font-size: 22px; color: red; text-transform: uppercase;"></div>
+    <h2 style="color: #337ab7; text-transform: capitalize">Thời gian được nghỉ còn lại:</h2>
+    <div id="nghi" style="font-size: 22px; color: red; text-transform: uppercase;"></div>
+    <marquee behavior="alternate"><img src="images//meo.gif" alt="ga"></marquee>
+</div>
+
+<script type="text/javascript">
+    $("#tet")
+        .countdown("2023/01/22", function(event) {
+            $(this).text(
+                event.strftime('%D Ngày %H Giờ %M Phút %S Giây')
+            );
+        });
+    $("#nghi")
+        .countdown("2023/1/15 17:30:00", function(event) {
+            $(this).text(
+                event.strftime('%D Ngày %H Giờ %M Phút %S Giây')
+            );
+        });
+    $('.giua').height('769px');
+</script>
+<script type="text/javascript" src="js/js.js"></script>
+</body>
+</html>
